@@ -9,11 +9,11 @@ pipeline {
 			
 			token="AAAAB3NzaC1yc2EAAAADAQABAAABAQC6JbdPbjJbJrc/KyXYv9FCy04Dnk5EPi4ft9ONEr2fttO4Ozyz0UzDUlMsE3r94as6cvxLdR049KoZRjDRLjOGvBfbf6DtlQy3i/FnDiB8jgYQFxRyuJgKUvnXKSLLdZ/SItxTEaftX2LY/xK/9ILFGHjDlvT3e/ghjfR57a9jHiNVf+LKpzNfD61/tnlavFM3eEMvzzBK+ZUGcEx8h1TI1CHZCCsSbTE27zRm+1VS5c7UEKaNXj9e6ybYYKWtxh00CS+zARLVUVF/13OXEYB34GQbB3M2pPUemhcbobpDQnKXqQoG0IOCXhAHC+s7N63PBzVbCO0fmZKo72B6Ht9B walas@DESKTOP-S3L6JC5"
 			
-			# Get the last tag name
+
 			tag=$(git describe --tags)
-			# Get the full message associated with this tag
+
 			message="$(git for-each-ref refs/tags/$tag --format='%(contents)')"
-			# Get the title and the description as separated variables
+
 			name=$(echo "$message" | head -n1)
 			description=$(echo "$message" | tail -n +3)
 			description=$(echo "$description" | sed -z 's/\n/\\n/g') # Escape line breaks to prevent json parsing problems
