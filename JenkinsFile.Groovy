@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo 'Downloading the Repository...'
 				git changelog: false,
-				url: 'https://github.com/CharlesPikachu/Games/tree/master/Game7'
+				url: 'https://github.com/CharlesPikachu/Games/'
             }
 	}
         stage("Rename-Game"){
